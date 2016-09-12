@@ -24,6 +24,11 @@ Route::get('sets/{set}/present/{order}/{part}', [
     'uses' => 'SetController@present'
 ]);
 
+Route::get('sets/{set}/add_card', [
+    'as'   => 'sets.addCard',
+    'uses' => 'SetController@add'
+]);
+
 Route::resource('sets', 'SetController', [
     'parameters' => ['sets' => 'set'],
 ]);

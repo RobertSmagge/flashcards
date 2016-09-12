@@ -16,14 +16,17 @@
                 {!! Form::submit('Verwijderen', ['class'=>'btn btn-lg btn-danger']) !!}
             </div>
         {!! Form::close() !!}
-        <ul>
-            @foreach($set->cards as $card)
-                <h2>
+        <h2>
+            <ul>
+                @foreach($set->cards as $card)
                     <li>
                         <a href="{{ route('cards.show', [$card]) }}">{{ $card->begrip }}</a>
                     </li>
-                </h2>
-            @endforeach
-        </ul>
+                @endforeach
+                <li>
+                    <a href="{{ route('sets.addCard', [$set]) }}" class="btn btn-lg btn-primary">Toevoegen</a>
+                </li>
+            </ul>
+        </h2>
     </div>
 @endsection
