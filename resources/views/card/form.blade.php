@@ -33,7 +33,7 @@
 </div>
 <div class="form-group{{ $errors->has('set') ? ' has-error' : '' }}">
     {{ Form::label('set', 'Set: ', ['class' => 'is-required']) }}
-    {{ Form::text('set', isset($card) ? $card->sets->first()->naam : old('set'), ['class' => 'form-control']) }}
+    {{ Form::text('set', isset($card) ? $card->sets->first()->naam : (isset($set) ? $set->naam : old('set')), ['class' => 'form-control']) }}
     @if($errors->has('set'))
         <span class="help-block">
             <strong>{{ $errors->first('set') }}</strong>

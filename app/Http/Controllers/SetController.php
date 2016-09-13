@@ -66,6 +66,11 @@ class SetController extends Controller
         return view('set.show', ['set' => $set]);
     }
 
+    public function add(Set $set)
+    {
+        return view('card.create', ['set' => $set]);
+    }
+
     /**
      * Present the specified set.
      *
